@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formulario</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,width=400"/>
+		<link href="normalize.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<header><strong>Formulario</strong></header>
+	<body>
+		<div id="formulario">
+			<form id="formularioF" align="center">
+				Name: <br><input type="text" name="firstname"><br>
+				Last name: <br><input type="text" name="lastname"><br>
+				Email: <br><input type="text" name="email"><br>
+				Birthday: <br><input type="text" name="birthday"><br>
+				Favorite team: <br><select name="favoriteTeam">
+					<option value="sl">San Lorenzo</option>
+					<option value="boca">Boca</option>
+					<option value="river">River</option>
+					<option value="racing">Racing</option>
+				</select> <br>
+				About yourself: <br><textarea name="miniBio" rows="5" cols="30"></textarea><br>
+				<button onClick="onClick()">Submit</button> <br>
+				<script type="text/javascript">
+					function onClick(){
+						alert("You are awesome!");
+					}
+				</script><br>
+				<button>Clear</button> <br>
+			</form>
+		</div>
+	</body>
+</html>
+

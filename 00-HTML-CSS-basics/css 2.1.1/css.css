@@ -1,0 +1,86 @@
+html { 
+	size: 14px;
+	font-family: Comic Sans MS; 
+}
+
+/* Medium screens (640px) */
+@media (min-width: 40rem) { 
+  html { font-size: 112%; }
+}
+
+/* Large screens (1024px) */
+@media (min-width: 64rem) { 
+  html { font-size: 120%; }
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 48rem;
+  width: 90%;
+}
+
+#header {
+  	text-align: center;
+  	align-content: center;
+  	width:100%;
+  	height:50px;
+}
+
+#oneFooter {height:20%;}
+#article {height:60%;}
+#anotherHeader {height:20%;}
+
+section {
+	font-size: 14px;
+	float: left;
+	width: 60%;
+	height: 400px;
+	box-sizing: border-box;
+
+}
+
+nav {
+	font-size: 12px;
+	display: inline-block;
+	height: 400px;
+	width: 20%;
+	float:left;
+	box-sizing: border-box;
+}
+aside {
+	font-size: 10px;
+	display: inline-block;
+	height: 400px;
+	width: 20%;
+	float:right;
+	box-sizing: border-box;
+}
+
+[id$="r"]{
+	background:#F8008C;
+}
+
+[id*="a"]:not([id$="r"]){
+	background:#0E76FC;
+}
+
+[id]{
+	font-weight: bold;
+}
+
+#anotherFooter{
+	clear: both;
+	width: 100%;
+}
+.myThings {	
+	text-align: center;
+	margin-bottom: auto;
+	margin-top: auto;
+	border: 1px solid #000000;
+}
