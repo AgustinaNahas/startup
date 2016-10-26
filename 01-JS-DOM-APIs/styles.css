@@ -1,0 +1,20 @@
+body {
+	background-size: cover;
+	background-attachment: fixed;
+	background-image: url('http://creativenerds.co.uk/wp-content/uploads/2015/11/green-polka-dot-pattern-set-620x420.png');
+	background-repeat: no-repeat;
+	align-items: center;
+}
+
+section {
+	font-size: 30px;
+	padding-top: 20px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+section#hidden{
+	font-size: 20px;
+	display: none;
+	padding-bottom: 20px;
+}
