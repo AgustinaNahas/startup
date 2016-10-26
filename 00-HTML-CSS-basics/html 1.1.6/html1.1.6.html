@@ -12,26 +12,26 @@
 	</head>
 	<header><strong>Formulario</strong></header>
 	<body>
-		<div id="formulario">
-			<form id="formularioF" align="center">
-				Name: <br><input type="text" name="firstname"><br>
-				Last name: <br><input type="text" name="lastname"><br>
-				Email: <br><input type="text" name="email"><br>
-				Birthday: <br><input type="text" name="birthday"><br>
-				Favorite team: <br><select name="favoriteTeam">
+		<div id="div-form">
+			<form class="form" align="center">
+				<label class="form-label" for="firstname">First name:</label><input type="text" name="firstname"><br>
+				<label class="form-label" for="lastname">Last name:</label><input type="text" name="lastname"><br>
+				<label class="form-label" for="email">Email:</label><input type="text" name="email"><br>
+				<label class="form-label" for="birthday">Birthday:</label><input type="text" name="birthday"><br>
+				<label class="form-label" for="favorite-team">Favorite team:</label><select name="favorite-team">
 					<option value="sl">San Lorenzo</option>
 					<option value="boca">Boca</option>
 					<option value="river">River</option>
 					<option value="racing">Racing</option>
-				</select> <br>
-				About yourself: <br><textarea name="miniBio" rows="5" cols="30"></textarea><br>
-				<button onClick="onClick()">Submit</button> <br>
+				</select>
+				<label class="form-label" for="miniBio">About yourself:</label><textarea id="miniBio" name="miniBio"></textarea>
+				<button class="form-button" onClick="onClick()">Submit</button>
 				<script type="text/javascript">
 					function onClick(){
 						alert("You are awesome!");
 					}
-				</script><br>
-				<button>Clear</button> <br>
+				</script>
+				<button class="form-button">Clear</button>
 			</form>
 		</div>
 	</body>

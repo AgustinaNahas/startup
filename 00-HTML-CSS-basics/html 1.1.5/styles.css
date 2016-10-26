@@ -1,31 +1,44 @@
 header {
-	color:white;
+	color: white;
+	font-size: 20px;
 }
 
-#video {
+body {
+	background: url("https://s-media-cache-ak0.pinimg.com/originals/e8/e5/38/e8e538fdacbc391abdf7f909315b7113.jpg");
+}
+
+.video {
 	display: inline-block;
 	height: 300px;
 	width: 40%;
-	float:left;
+	float: left;
 	box-sizing: border-box;
 }
-#others {
+
+.others {
 	display: inline-block;
 	height: 400px;
 	width: 30%;
-	float:left;
+	float: left;
 	position: relative;
-	top:50px;
+	top: 50px;
 	text-align: left;
 	box-sizing: border-box;
 }
-#img {
+
+.img {
 	display: inline-block;
 	height: 50%;
 }
-#mp3 {
+
+#img1 {
+	text-align: left;
+	top: 50px;
+}
+
+.mp3 {
 	display: inline-block;
 	height: 50%;
 	position: relative;
-	top:110px;
+	top: 110px;
 }

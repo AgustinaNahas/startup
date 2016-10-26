@@ -1,16 +1,30 @@
-#formulario {
-	background-image: url("https://cdn.vectorstock.com/i/composite/48,83/tribal-vintage-ethnic-pattern-seamless-vector-1654883.jpg");
-	position:relative;
-	left:20px;
+#div-form {
+	background-image: url('https://cdn.vectorstock.com/i/composite/48,83/tribal-vintage-ethnic-pattern-seamless-vector-1654883.jpg');
+	position: relative;
+	left: 20px;
 	width: 400px;
 	height: 500px;
 }
 
-#formularioF{
-	position:relative;
-	top:50px;
+.form{
+	position: relative;
+	top: 50px;
 }
 
 html {
 	font-weight: bold;
+}
+
+.form-label {
+	display: block;
+}
+
+.form-button {
+	display: block;
+	text-align: center;
+}
+
+#miniBio {
+	width: 300px;
+	min-height: 100px;
 }
