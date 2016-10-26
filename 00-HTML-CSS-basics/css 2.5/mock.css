@@ -1,0 +1,242 @@
+html { 
+	font-family: Tahoma, Geneva, sans-serif;
+	color: white;
+	font-size: 1em; 
+}
+
+header {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+@media screen {
+	body {
+		width: 75%;
+	}
+}
+
+@media print {
+	body {
+		width: 100%;
+	}
+}
+
+/* Large screens (1024px) */
+@media (max-width: 2500px){ 
+	html { 
+		font-size: 100%; 
+	}
+}
+
+@media (min-width: 2500px) { 
+	html { 
+		font-size: 200%; 
+	}
+}
+
+body {
+	background-image: url("http://patterncooler.com/gen/index/w/hexagonal_cube_mesh_pattern-936.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+@media all and (min-width: 700px) {
+	.row {
+		width: 90%;
+		display: inline-block;
+	}
+
+	#title {
+		float: left;
+		width: 30%;
+		display: inline-block;
+	}
+
+	#text {
+		float: right;
+		width: 70%;
+		display: inline-block;
+	}
+
+	.text-box{
+		text-align: left;
+		display: inline-block;
+	}
+}
+
+@media all and (max-width: 700px) {
+	.row {
+		width: 95%;
+		display: inline-block;
+	}
+
+	#title {
+		width: 95%;
+		display: inline-block;
+	}
+
+	#text {
+		width: 95%;
+		display: inline-block;
+	}
+
+	.text-box{
+		text-align: left;
+		display: inline-block;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	position: absolute;
+}
+
+*, *:before, *:after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.gallery {
+	clear: both;
+	background: rgba(20, 58, 71,0.85);
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 8px;
+}
+
+.gallery.columns {
+margin-right: 0;
+}
+
+@media all and (max-width: 700px) {
+	.image-box {
+		box-shadow: 0 0 2px 0 #115268;
+		width: -ms-calc(100% - 16px);
+		width: -moz-calc(100% - 16px);
+		width: -webkit-calc(100% - 16px);
+		width: calc(100% - 16px);
+		margin: 5px;
+		height: auto;
+		position: relative;
+		float: left;
+	}
+}
+
+@media all and (max-width: 1000px) and (min-width: 700px) {
+	.image-box {
+		box-shadow: 0 0 2px 0 #115268;
+		width: -ms-calc(50% - 16px);
+		width: -moz-calc(50% - 16px);
+		width: -webkit-calc(50% - 16px);
+		width: calc(50% - 16px);
+		margin: 5px;
+		height: auto;
+		position: relative;
+		float: left;
+	}
+}
+
+@media all and (max-width: 1400px) and (min-width: 1001px) {
+	.image-box {
+		box-shadow: 0 0 2px 0 #115268;
+		width: -ms-calc(33.3333% - 16px);
+		width: -moz-calc(33.3333% - 16px);
+		width: -webkit-calc(33.3333% - 16px);
+		width: calc(33.3333% - 16px);
+		margin: 5px;
+		height: auto;
+		position: relative;
+		float: left;
+	}
+}
+
+@media all and (min-width: 1401px) {
+	.image-box {
+		box-shadow: 0 0 2px 0 #115268;
+		width: -ms-calc(25% - 16px);
+		width: -moz-calc(25% - 16px);
+		width: -webkit-calc(25% - 16px);
+		width: calc(25% - 16px);
+		margin: 5px;
+		height: auto;
+		position: relative;
+		float: left;
+	}
+}
+
+.image-box:last-of-type {
+	margin-right: 0;
+}
+
+.gallery img {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.image-box:hover .screen{
+	opacity: 1;
+}
+
+
+.gallery a {
+	display: block;
+}
+
+.screen {
+	background-color: rgba(17, 82, 104,0.5);
+	left: 0;
+	top: 0;
+	border-radius: 0;
+	height: 50%;
+	width: 100%;
+	position: absolute;
+	opacity: 0;
+	z-index: 1000;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.descr {
+	color: #fff;
+	font-family: arial, helvetica, sans-serif;
+	font-weight: bold;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	margin-left: -30px;
+}
+.screen:hover .descr {
+	margin-left: 0;
+}
+p {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1em;
+	padding: 5%;
+	text-align: left;
+}
+
+.screen.fade-in .title {
+	margin-left: 0;
+}
+.screen.fade-in:hover {
+}
+.cta {
+	clear: both;
+	font-weight: bold;
+	display: block;
+	text-align: left;
+	font-size: 1em;
+}
+
+.row {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
