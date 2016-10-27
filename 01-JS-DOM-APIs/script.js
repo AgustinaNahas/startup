@@ -77,10 +77,15 @@ function add_to_list (full_name) {
 }
 
 function make_table(array){
+
 	$('#display_text').html("");
 	document.getElementById("repository_list").innerHTML = '';
 
+	document.getElementById("table").remove();
+	var array = JSON.parse(document.getElementById("matrix").value);
+
     var table = document.createElement('table');
+    table.setAttribute("id", "table")
     for (var i = 0; i < array.length; i++) {
         var row = document.createElement('tr');
         for (var j = 0; j < array[i].length; j++) {
