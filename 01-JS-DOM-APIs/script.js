@@ -27,7 +27,7 @@ var ajax = function (options) {
   });
 }
 
-function getResponse(config_obj) {
+function get_response(config_obj) {
 	config_obj.search_field = document.getElementById("search_field").value;
 	ajax(config_obj).then(function (response) {
 		if(response.target.response !== '') {
@@ -75,3 +75,22 @@ function add_to_list (full_name) {
 	new_repo.appendChild(repo_name);
 	document.getElementById("repository_list").appendChild(new_repo);
 }
+
+function make_table(array){
+	$('#display_text').html("");
+	document.getElementById("repository_list").innerHTML = '';
+
+    var table = document.createElement('table');
+    for (var i = 0; i < array.length; i++) {
+        var row = document.createElement('tr');
+        for (var j = 0; j < array[i].length; j++) {
+            var cell = document.createElement('td');
+            cell.textContent = array[i][j];
+            row.appendChild(cell);
+        }
+        table.appendChild(row);
+    }
+    document.body.appendChild(table);
+}
+
+var items = [ [1, 2], [3, 4], [5, 6] ];

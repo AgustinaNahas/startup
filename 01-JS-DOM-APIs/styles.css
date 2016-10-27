@@ -31,3 +31,17 @@ section#shown{
 	padding-bottom: 20px;
 	width: 30%;
 }
+
+table, th, td {
+   border: 1px solid black;
+}
+
+table {
+	align-self: center;
+}
+
+td {
+	width: 100px;
+	height: 25px;
+	text-align: center;
+}
