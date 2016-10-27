@@ -28,10 +28,11 @@ var ajax = function (options) {
 }
 
 function getResponse(config_obj) {
+	config_obj.search_field = document.getElementById("search_field").value;
 	ajax(config_obj).then(function (response) {
-	  if(response.target.response !== '') {
-	  	config_obj.success(response);
-	  }
+		if(response.target.response !== '') {
+			config_obj.success(response);
+		}
 	}, function (response) {
 		config_obj.error(response);
 	});
@@ -53,9 +54,11 @@ var config_repo = {
 	url: 'https://api.github.com/search/repositories',
 	dataType: 'json',
 	method: 'GET', 
-	data: "q=Javascript",
+	search_field: "",
+	data: "q=" + this.search_field,
 	success: function (response) {
 		$('#display_text').html("");
+		document.getElementById("repository_list").innerHTML = '';
 		var json_repositories = JSON.parse(response.target.response).items;
 		json_repositories.forEach( function( item ) {
 	    	add_to_list(item.full_name);
