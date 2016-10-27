@@ -45,3 +45,20 @@ td {
 	height: 25px;
 	text-align: center;
 }
+
+#matrix_div {
+	padding-top: 10px;
+}
+
+#search_lbl {
+	display: block;
+}
+
+#matrix{
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+#search_button {
+	display: inline-block;
+}
