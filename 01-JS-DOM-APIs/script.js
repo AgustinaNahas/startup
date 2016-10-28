@@ -40,7 +40,7 @@ var ajax = function (options) {
 function get_response(config_obj) {
 	config_obj.search_field = document.getElementById("search_field").value;
 	ajax(config_obj).then(function (response) {
-		if(response.target.response !== '') {
+		if(response !== '') {
 			config_obj.success(response);
 		}
 	}, function (response) {
@@ -53,7 +53,7 @@ var config_joke = {
 	dataType: 'json',
 	method: 'GET', 
 	success: function (response) {
-		$('#display_text').html(JSON.parse(response.target.response).value.joke);
+		$('#display_text').html(JSON.parse(response).value.joke);
 	},
 	error: function (resp) {
 		document.getElementById("display_text").style.color = '#ff0000';
@@ -61,7 +61,7 @@ var config_joke = {
 }
 
 var config_repo = {
-	url: 'https://aaapi.github.com/search/repositories',
+	url: 'https://api.github.com/search/repositories',
 	dataType: 'json',
 	method: 'GET', 
 	search_field: "",
@@ -69,14 +69,14 @@ var config_repo = {
 	success: function (response) {
 		$('#display_text').html("");
 		document.getElementById("repository_list").innerHTML = '';
-		var json_repositories = JSON.parse(response.target.response).items;
+		var json_repositories = JSON.parse(response).items;
 		json_repositories.forEach( function( item ) {
 	    	add_to_list(item.full_name);
 	    });
 	},
-	error: function (resp) {
+	error: function (response) {
 		document.getElementById("hidden").style.color = '#ff0000';
-		document.getElementById("hidden").innerHTML = resp.message;
+		document.getElementById("hidden").innerHTML = response.message;
 	}
 }
 
@@ -87,7 +87,7 @@ function add_to_list (full_name) {
 	document.getElementById("repository_list").appendChild(new_repo);
 }
 
-function make_table(array){
+function make_table(){
 
 	$('#display_text').html("");
 	document.getElementById("repository_list").innerHTML = '';
@@ -108,5 +108,3 @@ function make_table(array){
     }
     document.body.appendChild(table);
 }
-
-var items = [ [1, 2], [3, 4], [5, 6] ];
