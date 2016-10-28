@@ -6,7 +6,16 @@ var ajax = function (options) {
 	return new Promise(function (resolve, reject) {
   	var request = new XMLHttpRequest();  
     var async = true; // siempre debe ser asíncrono el llamado
-    request.onload = resolve;
+    request.onload = function (response) {
+     	if(response.target.status !== 200) {
+      	reject({
+        	code: response.target.status,
+          message: response.target.statusText
+        });
+      } else {
+        resolve(response.target.response);
+      }
+    }
     request.onerror = reject;
     
     if(options.method === 'GET' && options.data) {
@@ -26,6 +35,7 @@ var ajax = function (options) {
     }
   });
 }
+
 
 function get_response(config_obj) {
 	config_obj.search_field = document.getElementById("search_field").value;
@@ -51,7 +61,7 @@ var config_joke = {
 }
 
 var config_repo = {
-	url: 'https://api.github.com/search/repositories',
+	url: 'https://aaapi.github.com/search/repositories',
 	dataType: 'json',
 	method: 'GET', 
 	search_field: "",
@@ -66,6 +76,7 @@ var config_repo = {
 	},
 	error: function (resp) {
 		document.getElementById("hidden").style.color = '#ff0000';
+		document.getElementById("hidden").innerHTML = resp.message;
 	}
 }
 
