@@ -1,0 +1,64 @@
+body {
+	background-size: cover;
+	background-attachment: fixed;
+	background-image: url('http://creativenerds.co.uk/wp-content/uploads/2015/11/green-polka-dot-pattern-set-620x420.png');
+	background-repeat: no-repeat;
+	align-items: center;
+}
+
+section#title {
+	font-size: 30px;
+	padding-top: 20px;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+section.section{
+	display: inline-block;
+	padding: 10px;
+}
+
+section#hidden{
+	font-size: 20px;
+	width: 70%;
+	float: right;
+	display: none;
+}
+
+section#shown{
+	font-size: 20px;
+	float: left;
+	padding-bottom: 20px;
+	width: 30%;
+}
+
+table, th, td {
+   border: 1px solid black;
+}
+
+table {
+	align-self: center;
+}
+
+td {
+	width: 100px;
+	height: 25px;
+	text-align: center;
+}
+
+#matrix_div {
+	padding-top: 10px;
+}
+
+#search_lbl {
+	display: block;
+}
+
+#matrix{
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+#search_button {
+	display: inline-block;
+}
