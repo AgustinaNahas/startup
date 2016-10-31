@@ -24,14 +24,25 @@ resume = function(){ alert('resume') };
 function doSomething(e) {
     alert("Event is called: " + e.type);
 }
+
+var an_event = new CustomEvent("event");
+
  
 function new_event_listener(title, year, duration){
-	var myEvent = new CustomEvent("myEvent");
+	var myEvent, func;
 	return {
-		myEvent, 
-		on: function(){document.addEventListener("myEvent", doSomething, false)},
-		emit: function(){document.dispatchEvent(myEvent)},
-		off: function(){document.removeEventListener("myEvent", doSomething, false)}
+		myEvent, func, 
+		on: function(one_event, fnc){
+			document.addEventListener(one_event.type, fnc, false);
+			myEvent = one_event;
+			func = fnc;
+		},
+		emit: function(){
+			document.dispatchEvent(myEvent)
+		},
+		off: function(){
+			document.removeEventListener(myEvent.type, func, false)
+		}
 	}
 }
 
