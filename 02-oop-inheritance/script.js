@@ -1,24 +1,16 @@
-var movie1 = add_movie('What a wonderful life', 1946, '2h 10min');
-var movie2 = add_movie('The Shining', 1980, '2h 26min');
-var movie3 = add_movie('Amadeus', 1984, '2h 40min');
-var movie4 = add_movie('Back to the Future', 1985, '1h 56min');
-var movie5 = add_movie('The Fountain', 2006, '1h 36min');
+var movie1 = Movie('What a wonderful life', 1946, '2h 10min');
+var movie2 = Movie('The Shining', 1980, '2h 26min');
+var movie3 = Movie('Amadeus', 1984, '2h 40min');
+var movie4 = Movie('Back to the Future', 1985, '1h 56min');
+var movie5 = Movie('The Fountain', 2006, '1h 36min');
 
-
-function add_movie(title, year, duration){
+function Movie(title, year, duration){
 	return {
 		title,
 		year,
-		duration,
-		play: function(){alert('play')},
-		pause: function(){alert('pause')},
-		resume: function(){alert('resume')}
+		duration
 	}
 }
-
-play = function(){ alert('play') };
-pause = function(){ alert('pause') };
-resume = function(){ alert('resume') };
 
  
 function doSomething(e) {
@@ -28,14 +20,14 @@ function doSomething(e) {
 var an_event = new CustomEvent("event");
 
  
-function new_event_listener(title, year, duration){
+function EventEmmiter(){
 	var myEvent, func;
 	return {
 		myEvent, func, 
 		on: function(one_event, fnc){
-			document.addEventListener(one_event.type, fnc, false);
 			myEvent = one_event;
 			func = fnc;
+			document.addEventListener(myEvent.type, func, false);
 		},
 		emit: function(){
 			document.dispatchEvent(myEvent)
