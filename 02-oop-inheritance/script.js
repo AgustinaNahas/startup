@@ -1,5 +1,4 @@
 function EventEmmiter(){
-	var eventHandlers = [event_play, event_pause, event_resume];
 	return {
 		on: function(name, callback){
 			eventHandlers.push({name, callback});
@@ -15,30 +14,6 @@ function EventEmmiter(){
 	};
 }
 
-var event_play = 
-	{ 
-		name: 'play', 
-		callback: function() { 
-			console.log('play') 
-		}
-	};
-
-var event_pause = 
-	{ 
-		name: 'pause', 
-		callback: function() { 
-			console.log('pause') 
-		}
-	};
-
-var event_resume = 		
-	{ 
-		name: 'resume', 
-		callback: function() { 
-			console.log('resume') 
-		}
-	};
-
 var movie1 = Movie('What a wonderful life', 1946, '2h 10min');
 var movie2 = Movie('The Shining', 1980, '2h 26min');
 var movie3 = Movie('Amadeus', 1984, '2h 40min');
@@ -51,6 +26,14 @@ function Movie(title, year, duration){
 	m.year = year;
 	m.duration = duration;
 	return m;
+}
+
+function Logger(){
+	return{
+		log: function(info){
+			console.log(info);
+		}
+	}
 }
 
 function Actor(name, age){
