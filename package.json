@@ -1,0 +1,19 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "Please, use this repository as a base for you training phase. The idea is\r to fork this project so everyone uses the same folder structure for the\r exercises.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgustinaNahas/startup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AgustinaNahas/startup/issues"
+  },
+  "homepage": "https://github.com/AgustinaNahas/startup#readme"
+}
