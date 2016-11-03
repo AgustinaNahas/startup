@@ -5,9 +5,9 @@
 		<title>Una página en Javascript</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="styles.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="movie.js"></script>
 		<script src="module.js"></script>
 	</head>
 	<body>
@@ -16,12 +16,15 @@
 		</section>
 		<section class="section" id="hidden">
 
-			<div ng-app="myApp">
-			    <div ng-controller="UserCtrl">
-			        <p class="username">Welcome, {{ user.details.username }}</p>
-			        <p class="id">User ID: {{ user.details.id }}</p>
-			    </div>
-			</div>
+		<div ng-app="myApp">
+		    <div ng-controller="MainCtrl">
+		        <ul>
+		            <li ng-repeat="movie in movie_list">
+		                {{ movie.title }} ({{ movie.year }}) {{ movie.duration }}
+		            </li>
+		        </ul>
+		    </div>
+		</div>
 
 		</section>
 	</body>
