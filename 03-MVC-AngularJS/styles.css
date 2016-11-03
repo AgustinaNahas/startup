@@ -1,0 +1,102 @@
+@media all and (max-width: 600px){
+	#movie_details {
+		width: 100%;
+		margin: 5px; 
+	}
+
+	#movie_table {
+		width: 100%;
+		margin: 5px; 
+	}
+} 
+
+@media all and (max-width: 1000px) and (min-width: 601px){
+	#movie_details {
+		width: 48%;
+		float: right;
+		align-self: right;
+		margin: 1px; 
+	}
+
+	#movie_table {
+		width: 48%;
+		float: left;
+		align-self: left;
+		margin: 1px; 
+	}
+} 
+
+@media all and (min-width: 1001px){
+	#movie_details {
+		width: 49%;
+		float: right;
+		align-self: right;
+		margin: 5px; 
+	}
+
+	#movie_table {
+		width: 49%;
+		float: left;
+		align-self: left;
+		margin: 5px; 
+	}
+} 
+
+@media all and (min-width: 850px){
+	.form-control {
+		display: inline-block;
+		align-self: center;
+	}
+
+	#in_movie_title {
+		width: 20%;
+	}
+
+	#in_movie_year {
+		width: 10%;
+	}
+
+	#in_movie_duration {
+		width: 10%;
+	}
+}
+
+@media all and (max-width: 849px){
+	.form-control {
+		display: inline-block;
+		align-self: center;
+	}
+
+	#in_movie_title {
+		width: 20%;
+	}
+
+	#in_movie_year {
+		width: 10%;
+	}
+
+	#in_movie_duration {
+		width: 10%;
+	}
+} 
+
+#div_buttons {
+	margin: 5px;
+	align-self: center;
+}
+
+#div_form {
+	margin: 5px;
+}
+
+#movie_details #heading {
+	width: 100%;
+}
+
+#movie_table #heading {
+	width: 100%;
+}
+
+p.cap{
+	text-transform: capitalize;
+}
