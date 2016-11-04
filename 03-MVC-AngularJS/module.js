@@ -1,24 +1,13 @@
 var myApp = angular.module('myApp', []);
-
-myApp.factory('Storage', function () {
-	return {
-		get: function(string) {
-			var json_obj = localStorage.getItem(string);
-			return JSON.parse(json_obj);
-		},
-		post: function(list, string) {
-			var json_obj = JSON.stringify(list);
-			localStorage.setItem(string, json_obj);
-		}
-	};
-});
  
-myApp.service('Storage_Serv', function(Storage){
+myApp.service('Storage_Serv', function(){
 	this.get = function(string) {
-		return Storage.get(string);
+		var json_obj = localStorage.getItem(string);
+		return JSON.parse(json_obj);
 	}
-	this.post = function(list, string){
-		Storage.post(list, string);
+	this.set = function(list, string){
+		var json_obj = JSON.stringify(list);
+		localStorage.setItem(string, json_obj);
 	}
 });
  
@@ -53,19 +42,14 @@ myApp.controller('MainCtrl', function($scope, Storage_Serv) {
 	};
 
 	$scope.add_movie = function(){
-		if (document.getElementById('in_movie_title').value != '' && document.getElementById('in_movie_year').value != '' && document.getElementById('in_movie_duration').value != '') {
-			var title = document.getElementById('in_movie_title').value;
-			var year = parseInt(document.getElementById('in_movie_year').value);//$('id_movie_year');
-			var duration = document.getElementById('in_movie_duration').value;
-		}
 
-		var new_movie = new Movie(title, year, duration);
+		var new_movie = new Movie($scope.i_title, $scope.i_year, $scope.i_duration);
 		
 		var movie_list = Storage_Serv.get('movies');
 		
 		movie_list.push(new_movie);
 		
-		Storage_Serv.post(movie_list, 'movies');
+		Storage_Serv.set(movie_list, 'movies');
 		
 		$scope.movie_list = Storage_Serv.get('movies');
 
@@ -74,27 +58,24 @@ myApp.controller('MainCtrl', function($scope, Storage_Serv) {
 	};
 
 	$scope.delete_movie = function(){
-		var title = document.getElementById('in_movie_title').value;
 		
 		var movie_list = Storage_Serv.get('movies');
-		var index = movie_list.findIndex(mov => mov.title == title);
+		var index = movie_list.findIndex(mov => mov.title == $scope.i_title);
 		if (index != undefined) movie_list.splice(index, 1);
-		Storage_Serv.post(movie_list, 'movies');
+		Storage_Serv.set(movie_list, 'movies');
 		
 		$scope.movie_list = Storage_Serv.get('movies');
 	}
 
 	$scope.edit_movie = function(){
-		document.getElementById('in_movie_title').value = $scope.selected_movie.title;
-		document.getElementById('in_movie_year').value = $scope.selected_movie.year;
-		document.getElementById('in_movie_duration').value = $scope.selected_movie.duration;
-
-		var title = $scope.selected_movie.title;
+		$scope.i_title = $scope.selected_movie.title;
+		$scope.i_year= $scope.selected_movie.year;
+		$scope.i_duration = $scope.selected_movie.duration;
 		
 		var movie_list = Storage_Serv.get('movies');
-		var index = movie_list.findIndex(mov => mov.title == title);
+		var index = movie_list.findIndex(mov => mov.title == $scope.i_title);
 		if (index != undefined) movie_list.splice(index, 1);
-		Storage_Serv.post(movie_list, 'movies');
+		Storage_Serv.set(movie_list, 'movies');
 		
 		$scope.movie_list = Storage_Serv.get('movies');
 
